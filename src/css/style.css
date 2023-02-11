@@ -1,0 +1,157 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+}
+
+/* 
+font-family: 'Open Sans', sans-serif;
+font-family: 'Press Start 2P', cursive;
+*/
+
+.grid-container > * {
+  box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 4px;
+  padding: 10px;
+  text-align: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-rows: 60px 90px 150px auto 50px;
+  grid-template-areas:
+    "header"
+    "navbar"
+    "sidebar"
+    "main"
+    "footer";
+}
+
+.header {
+  grid-area: header;
+  background-color: #ed1c24;
+}
+.header h1 {
+  color: #ffcc00;
+  font-family: "Press Start 2P", cursive;
+  text-shadow: 5px 4px 1px #2a6eb6;
+}
+
+.navbar {
+  grid-area: navbar;
+  background-color: #0b3d91;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sidebar {
+  grid-area: sidebar;
+  background-color: #d9d9d9;
+  font-family: "Open Sans", sans-serif;
+}
+.sidebar form {
+  padding: 20px;
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 10px;
+}
+
+.sidebar h3 {
+  margin-top: 0;
+}
+
+#tipo,
+#generacion {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+
+.filtro {
+  background-color: white;
+  border: 1px solid gray;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.filtro:hover {
+  background-color: lightgray;
+}
+.filtro {
+  cursor: pointer;
+}
+.filtrado {
+  background-color: #2a6eb6;
+  color: white;
+}
+
+.main {
+  grid-area: main;
+  background-color: #f3f1f5;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+}
+.card {
+  margin: 20px;
+  width: 200px;
+  height: 300px;
+  border-radius: 5px;
+  background-color: #ed1c24;
+  background-size: cover;
+  box-shadow: 3px 5px 5px blue;
+  cursor: pointer;
+  overflow: hidden;
+}
+.contenido {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: 0.5;
+}
+.contenido h2 {
+  color: #ffcc00;
+  font-family: "Press Start 2P", cursive;
+  text-shadow: 4px 4px 1px #2a6eb6;
+  font-size: 25px;
+}
+
+.card:hover .contenido {
+  opacity: 1;
+}
+.footer {
+  grid-area: footer;
+  background-color: #333;
+  color: white;
+  font-style: italic;
+}
+
+@media (min-width: 600px) {
+  .grid-container {
+    grid-template-columns: 400px auto;
+    grid-template-rows: 60px 90px auto auto 50px;
+    grid-template-areas:
+      "header header"
+      "navbar navbar"
+      "sidebar main"
+      "sidebar main"
+      "footer footer";
+  }
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300&family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body class="grid-container">
+    <header class="header">
+        <h1>Pokédex Navigator</h1>
+    </header>
+    <nav class="navbar">
+        <nav class="navbar navbar-light">
+            <div class="container-fluid">
+              <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="¿Que pokemon buscas?" aria-label="Buscar">
+                <button class="btn btn-outline-success" type="submit">Buscar</button>
+              </form>
+            </div>
+          </nav>
+    </nav>
+    <aside class="sidebar">
+        <form onsubmit="return false">
+            <h3>Filtros de busqueda</h3>
+            <button id="tipoBtn" class="btn btn-primary filtrado">Tipo</button>
+            <ul id="tipo" name="tipo">
+              <li class="filtro" data-value="">Todos</li>
+              <li class="filtro" data-value="Agua">Agua</li>
+              <li class="filtro" data-value="Fuego">Fuego</li>
+              <li class="filtro" data-value="Planta">Planta</li>
+              <li class="filtro" data-value="Tierra">Tierra</li>
+              <li class="filtro" data-value="Hielo">Hielo</li>
+              <li class="filtro" data-value="Roca">Roca</li>
+              <li class="filtro" data-value="Normal">Normal</li>
+              <li class="filtro" data-value="Psíquico">Psíquico</li>
+              <li class="filtro" data-value="Volador">Volador</li>
+              <li class="filtro" data-value="Veneno">Veneno</li>
+              <li class="filtro" data-value="Lucha">Lucha</li>
+              <li class="filtro" data-value="Fantasma">Fantasma</li>
+              <li class="filtro" data-value="Electrico">Electrico</li>
+              <li class="filtro" data-value="Bicho">Bicho</li>
+              <li class="filtro" data-value="Dragón">Dragón</li>
+              <li class="filtro" data-value="Acero">Acero</li>
+              <li class="filtro" data-value="Siniestro">Siniestro</li>
+              <li class="filtro" data-value="Hada">Hada</li>
+            </ul>
+            <br><br>
+            <button id="generacionBtn" class="btn btn-primary filtrado">Generación</button>
+            <ul id="generacion" name="generacion">
+              <li class="filtro" data-value="generacion-primera">Primera</li>
+              <li class="filtro" data-value="generacion-segunda">Segunda</li>
+              <li class="filtro" data-value="generacion-tecera">Tercera</li>
+              <li class="filtro" data-value="generacion-cuarta">Cuarta</li>
+              <li class="filtro" data-value="generacion-quinta">Quinta</li>
+              <li class="filtro" data-value="generacion-sexta">Sexta</li>
+              <li class="filtro" data-value="generacion-septima">Septima</li>
+              <li class="filtro" data-value="generacion-octava">Octava</li>
+            </ul>
+          </form>
+    </aside>
+    <article class="main">
+        <div class="card">
+          <div class="contenido">
+            <h2>Pokemon</h2>
+          </div>
+        </div>
+        <div class="card">
+          <div class="contenido">
+            <h2>Pokemon</h2>
+          </div>
+        </div>
+        <div class="card">
+          <div class="contenido">
+            <h2>Pokemon</h2>
+          </div>
+        </div>
+        <div class="card">
+          <div class="contenido">
+            <h2>Pokemon</h2>
+          </div>
+        </div>
+        <div class="card">
+          <div class="contenido">
+            <h2>Pokemon</h2>
+          </div>
+        </div>
+        <div class="card">
+          <div class="contenido">
+            <h2>Pokemon</h2>
+          </div>
+        </div>
+        <div class="card">
+          <div class="contenido">
+            <h2>Pokemon</h2>
+          </div>
+        </div>
+        <div class="card">
+          <div class="contenido">
+            <h2>Pokemon</h2>
+          </div>
+        </div>
+        <div class="card">
+          <div class="contenido">
+            <h2>Pokemon</h2>
+          </div>
+        </div>
+        <div class="card">
+          <div class="contenido">
+            <h2>Pokemon</h2>
+          </div>
+        </div>
+        <div class="card">
+          <div class="contenido">
+            <h2>Pokemon</h2>
+          </div>
+        </div>
+        <div class="card">
+          <div class="contenido">
+            <h2>Pokemon</h2>
+          </div>
+        </div>
+    </article>
+    <footer class="footer">Copyright © Valentin Veron Caceres</footer>
+    <script type="text/javascript" src="src/js/data.js"></script>
+    <script type="text/javascript" src="src/js/main.js"></script>
+</body>
+</html>
