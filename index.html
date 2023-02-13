@@ -20,114 +20,298 @@
     <nav class="navbar">
         <nav class="navbar navbar-light">
             <div class="container-fluid">
-              <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="¿Que pokemon buscas?" aria-label="Buscar">
+              <form class="d-flex" role="search" onsubmit="buscarPokemon(event)">
+                <input class="form-control me-2" type="search" placeholder="¿Que pokemon buscas?" autocomplete="off" name="pokemon" aria-label="Buscar">
                 <button class="btn btn-outline-success" type="submit">Buscar</button>
               </form>
             </div>
           </nav>
     </nav>
     <aside class="sidebar">
-        <form onsubmit="return false">
-            <h3>Filtros de busqueda</h3>
-            <button id="tipoBtn" class="btn btn-primary filtrado">Tipo</button>
-            <ul id="tipo" name="tipo">
-              <li class="filtro" data-value="">Todos</li>
-              <li class="filtro" data-value="Agua">Agua</li>
-              <li class="filtro" data-value="Fuego">Fuego</li>
-              <li class="filtro" data-value="Planta">Planta</li>
-              <li class="filtro" data-value="Tierra">Tierra</li>
-              <li class="filtro" data-value="Hielo">Hielo</li>
-              <li class="filtro" data-value="Roca">Roca</li>
-              <li class="filtro" data-value="Normal">Normal</li>
-              <li class="filtro" data-value="Psíquico">Psíquico</li>
-              <li class="filtro" data-value="Volador">Volador</li>
-              <li class="filtro" data-value="Veneno">Veneno</li>
-              <li class="filtro" data-value="Lucha">Lucha</li>
-              <li class="filtro" data-value="Fantasma">Fantasma</li>
-              <li class="filtro" data-value="Electrico">Electrico</li>
-              <li class="filtro" data-value="Bicho">Bicho</li>
-              <li class="filtro" data-value="Dragón">Dragón</li>
-              <li class="filtro" data-value="Acero">Acero</li>
-              <li class="filtro" data-value="Siniestro">Siniestro</li>
-              <li class="filtro" data-value="Hada">Hada</li>
+            <ul class="sidebar-lista">
+              <li class="sidebar-item"><button class="btn btn-sidebar" id="ver-todos">Ver todos</button></li> 
+              <li class="sidebar-item"><button class="btn btn-sidebar normal" id="normal">Normal</button></li>
+              <li class="sidebar-item"><button class="btn btn-sidebar fire" id="fire">Fire</button></li>
+              <li class="sidebar-item"><button class="btn btn-sidebar water" id="water">Water</button></li>
+              <li class="sidebar-item"><button class="btn btn-sidebar grass" id="grass">Grass</button></li>
+              <li class="sidebar-item"><button class="btn btn-sidebar electric" id="electric">Electric</button></li>
+              <li class="sidebar-item"><button class="btn btn-sidebar ice" id="ice">Ice</button></li>
+              <li class="sidebar-item"><button class="btn btn-sidebar fighting" id="fighting">Fighting</button></li>
+              <li class="sidebar-item"><button class="btn btn-sidebar poison" id="poison">Poison</button></li>
+              <li class="sidebar-item"><button class="btn btn-sidebar ground" id="ground">Ground</button></li>
+              <li class="sidebar-item"><button class="btn btn-sidebar flying" id="flying">Flying</button></li>
+              <li class="sidebar-item"><button class="btn btn-sidebar psychic" id="psychic">Psychic</button></li>
+              <li class="sidebar-item"><button class="btn btn-sidebar bug" id="bug">Bug</button></li>
+              <li class="sidebar-item"><button class="btn btn-sidebar rock" id="rock">Rock</button></li>
+              <li class="sidebar-item"><button class="btn btn-sidebar ghost" id="ghost">Ghost</button></li>
+              <li class="sidebar-item"><button class="btn btn-sidebar dark" id="dark">Dark</button></li>
+              <li class="sidebar-item"><button class="btn btn-sidebar dragon" id="dragon">Dragon</button></li>
+              <li class="sidebar-item"><button class="btn btn-sidebar steel" id="steel">Steel</button></li>
+              <li class="sidebar-item"><button class="btn btn-sidebar fairy" id="fairy">Fairy</button></li>
             </ul>
-            <br><br>
-            <button id="generacionBtn" class="btn btn-primary filtrado">Generación</button>
-            <ul id="generacion" name="generacion">
-              <li class="filtro" data-value="generacion-primera">Primera</li>
-              <li class="filtro" data-value="generacion-segunda">Segunda</li>
-              <li class="filtro" data-value="generacion-tecera">Tercera</li>
-              <li class="filtro" data-value="generacion-cuarta">Cuarta</li>
-              <li class="filtro" data-value="generacion-quinta">Quinta</li>
-              <li class="filtro" data-value="generacion-sexta">Sexta</li>
-              <li class="filtro" data-value="generacion-septima">Septima</li>
-              <li class="filtro" data-value="generacion-octava">Octava</li>
-            </ul>
-          </form>
     </aside>
     <article class="main">
+      <div class="cartas-de-pokemones">
         <div class="card">
-          <div class="contenido">
-            <h2>Pokemon</h2>
+          <div class="pokemon">
+            <p class="pokemon-id-fondo">#025</p>
+            <div class="pokemon-imagen">
+              <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png" alt="">
+            </div>
+            <div class="pokemon-info">
+              <div class="nombre-pokemon">
+                <p class="pokemon-id">#025</p>
+                <h2 class="nombre-pokemon" id="nombre-pokemon">Pikachu</h2>
+              </div>
+              <div class="pokemon-tipos">
+                <p class="electric tipo">Electric</p>
+                <p class="steel tipo">Steel</p>
+              </div>
+              <div class="informacion">
+                <button>Informacion</button>
+              </div>
+            </div>
           </div>
         </div>
         <div class="card">
-          <div class="contenido">
-            <h2>Pokemon</h2>
+          <div class="contenido pokemon">
+            <p class="pokemon-id-fondo">#0158</p>
+            <div class="pokemon-imagen">
+              <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/158.png" alt="">
+            </div>
+            <div class="pokemon-info">
+              <div class="nombre-pokemon">
+                <p class="pokemon-id">#0158</p>
+                <h2 class="nombre-pokemon" id="nombre-pokemon">Totodile</h2>
+              </div>
+              <div class="pokemon-tipos">
+                <p class="water tipo">Water</p>
+                <p class="ice tipo">Ice</p>
+              </div>
+              <div class="informacion">
+                <button>Informacion</button>
+              </div>
+            </div>
           </div>
         </div>
         <div class="card">
-          <div class="contenido">
-            <h2>Pokemon</h2>
+          <div class="contenido pokemon">
+            <p class="pokemon-id-fondo">#0158</p>
+            <div class="pokemon-imagen">
+              <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/158.png" alt="">
+            </div>
+            <div class="pokemon-info">
+              <div class="nombre-pokemon">
+                <p class="pokemon-id">#0158</p>
+                <h2 class="nombre-pokemon" id="nombre-pokemon">Totodile</h2>
+              </div>
+              <div class="pokemon-tipos">
+                <p class="water tipo">Water</p>
+                <p class="ice tipo">Ice</p>
+              </div>
+              <div class="informacion">
+                <button>Informacion</button>
+              </div>
+            </div>
           </div>
         </div>
         <div class="card">
-          <div class="contenido">
-            <h2>Pokemon</h2>
+          <div class="contenido pokemon">
+            <p class="pokemon-id-fondo">#0158</p>
+            <div class="pokemon-imagen">
+              <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/158.png" alt="">
+            </div>
+            <div class="pokemon-info">
+              <div class="nombre-pokemon">
+                <p class="pokemon-id">#0158</p>
+                <h2 class="nombre-pokemon" id="nombre-pokemon">Totodile</h2>
+              </div>
+              <div class="pokemon-tipos">
+                <p class="water tipo">Water</p>
+                <p class="ice tipo">Ice</p>
+              </div>
+              <div class="informacion">
+                <button>Informacion</button>
+              </div>
+            </div>
           </div>
         </div>
         <div class="card">
-          <div class="contenido">
-            <h2>Pokemon</h2>
+          <div class="contenido pokemon">
+            <p class="pokemon-id-fondo">#0158</p>
+            <div class="pokemon-imagen">
+              <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/158.png" alt="">
+            </div>
+            <div class="pokemon-info">
+              <div class="nombre-pokemon">
+                <p class="pokemon-id">#0158</p>
+                <h2 class="nombre-pokemon" id="nombre-pokemon">Totodile</h2>
+              </div>
+              <div class="pokemon-tipos">
+                <p class="water tipo">Water</p>
+                <p class="ice tipo">Ice</p>
+              </div>
+              <div class="informacion">
+                <button>Informacion</button>
+              </div>
+            </div>
           </div>
         </div>
         <div class="card">
-          <div class="contenido">
-            <h2>Pokemon</h2>
+          <div class="contenido pokemon">
+            <p class="pokemon-id-fondo">#0158</p>
+            <div class="pokemon-imagen">
+              <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/158.png" alt="">
+            </div>
+            <div class="pokemon-info">
+              <div class="nombre-pokemon">
+                <p class="pokemon-id">#0158</p>
+                <h2 class="nombre-pokemon" id="nombre-pokemon">Totodile</h2>
+              </div>
+              <div class="pokemon-tipos">
+                <p class="water tipo">Water</p>
+                <p class="ice tipo">Ice</p>
+              </div>
+              <div class="informacion">
+                <button>Informacion</button>
+              </div>
+            </div>
           </div>
         </div>
         <div class="card">
-          <div class="contenido">
-            <h2>Pokemon</h2>
+          <div class="contenido pokemon">
+            <p class="pokemon-id-fondo">#0158</p>
+            <div class="pokemon-imagen">
+              <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/158.png" alt="">
+            </div>
+            <div class="pokemon-info">
+              <div class="nombre-pokemon">
+                <p class="pokemon-id">#0158</p>
+                <h2 class="nombre-pokemon" id="nombre-pokemon">Totodile</h2>
+              </div>
+              <div class="pokemon-tipos">
+                <p class="water tipo">Water</p>
+                <p class="ice tipo">Ice</p>
+              </div>
+              <div class="informacion">
+                <button>Informacion</button>
+              </div>
+            </div>
           </div>
         </div>
         <div class="card">
-          <div class="contenido">
-            <h2>Pokemon</h2>
+          <div class="contenido pokemon">
+            <p class="pokemon-id-fondo">#0158</p>
+            <div class="pokemon-imagen">
+              <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/158.png" alt="">
+            </div>
+            <div class="pokemon-info">
+              <div class="nombre-pokemon">
+                <p class="pokemon-id">#0158</p>
+                <h2 class="nombre-pokemon" id="nombre-pokemon">Totodile</h2>
+              </div>
+              <div class="pokemon-tipos">
+                <p class="water tipo">Water</p>
+                <p class="ice tipo">Ice</p>
+              </div>
+              <div class="informacion">
+                <button>Informacion</button>
+              </div>
+            </div>
           </div>
         </div>
         <div class="card">
-          <div class="contenido">
-            <h2>Pokemon</h2>
+          <div class="contenido pokemon">
+            <p class="pokemon-id-fondo">#0158</p>
+            <div class="pokemon-imagen">
+              <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/158.png" alt="">
+            </div>
+            <div class="pokemon-info">
+              <div class="nombre-pokemon">
+                <p class="pokemon-id">#0158</p>
+                <h2 class="nombre-pokemon" id="nombre-pokemon">Totodile</h2>
+              </div>
+              <div class="pokemon-tipos">
+                <p class="water tipo">Water</p>
+                <p class="ice tipo">Ice</p>
+              </div>
+              <div class="informacion">
+                <button>Informacion</button>
+              </div>
+            </div>
           </div>
         </div>
         <div class="card">
-          <div class="contenido">
-            <h2>Pokemon</h2>
+          <div class="contenido pokemon">
+            <p class="pokemon-id-fondo">#0158</p>
+            <div class="pokemon-imagen">
+              <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/158.png" alt="">
+            </div>
+            <div class="pokemon-info">
+              <div class="nombre-pokemon">
+                <p class="pokemon-id">#0158</p>
+                <h2 class="nombre-pokemon" id="nombre-pokemon">Totodile</h2>
+              </div>
+              <div class="pokemon-tipos">
+                <p class="water tipo">Water</p>
+                <p class="ice tipo">Ice</p>
+              </div>
+              <div class="informacion">
+                <button>Informacion</button>
+              </div>
+            </div>
           </div>
         </div>
         <div class="card">
-          <div class="contenido">
-            <h2>Pokemon</h2>
+          <div class="contenido pokemon">
+            <p class="pokemon-id-fondo">#0158</p>
+            <div class="pokemon-imagen">
+              <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/158.png" alt="">
+            </div>
+            <div class="pokemon-info">
+              <div class="nombre-pokemon">
+                <p class="pokemon-id">#0158</p>
+                <h2 class="nombre-pokemon" id="nombre-pokemon">Totodile</h2>
+              </div>
+              <div class="pokemon-tipos">
+                <p class="water tipo">Water</p>
+                <p class="ice tipo">Ice</p>
+              </div>
+              <div class="informacion">
+                <button>Informacion</button>
+              </div>
+            </div>
           </div>
         </div>
         <div class="card">
-          <div class="contenido">
-            <h2>Pokemon</h2>
+          <div class="contenido pokemon">
+            <p class="pokemon-id-fondo">#0158</p>
+            <div class="pokemon-imagen">
+              <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/158.png" alt="">
+            </div>
+            <div class="pokemon-info">
+              <div class="nombre-pokemon">
+                <p class="pokemon-id">#0158</p>
+                <h2 class="nombre-pokemon" id="nombre-pokemon">Totodile</h2>
+              </div>
+              <div class="pokemon-tipos">
+                <p class="water tipo">Water</p>
+                <p class="ice tipo">Ice</p>
+              </div>
+              <div class="informacion">
+                <button>Informacion</button>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
     </article>
+    <div id="ventana-emergente" class="ventana-emergente">
+      <div class="ventana-contenido">
+        <span class="boton-cerrar">&times;</span>
+        <p>Aquí puedes agregar el contenido que deseas mostrar en el modal</p>
+      </div>
+    </div>
     <footer class="footer">Copyright © Valentin Veron Caceres</footer>
     <script type="text/javascript" src="src/js/data.js"></script>
     <script type="text/javascript" src="src/js/main.js"></script>

@@ -8,7 +8,8 @@
     "cypress-run": "cypress run",
     "cypress-dev": "cypress open",
     "test": "run-p start cypress-run",
-    "test-dev": "run-p start cypress-dev"  },
+    "test-dev": "run-p start cypress-dev"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/valenn0101/Pokedex-app.git"
@@ -20,8 +21,7 @@
   },
   "homepage": "https://github.com/valenn0101/Pokedex-app#readme",
   "dependencies": {
-    "bootstrap": "^5.2.3",
-    "handlebars": "^4.7.7"
+    "bootstrap": "^5.2.3"
   },
   "devDependencies": {
     "cypress": "^12.5.1"
