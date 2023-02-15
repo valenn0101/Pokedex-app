@@ -53,7 +53,7 @@ function showPokemon(pokemonesJSON) {
           pokemonesJSON.sprites.other["official-artwork"].front_default
         }" alt="${pokemonesJSON.name}">
       </div>
-      <div class="pokemon-tipos">
+      <div class="pokemon-types">
         ${types}
       </div>
       <div class="poke-stats">

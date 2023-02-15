@@ -100,7 +100,6 @@ ul {
   width: 250px;
   position: fixed;
   border-radius: 100vmax;
-  display: grid;
 }
 .sidebar-item {
   margin: 3px;
