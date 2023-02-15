@@ -1,4 +1,4 @@
-const $pokemonList = document.querySelector(".cartas-de-pokemones");
+const $pokemonList = document.querySelector(".pokemon-cards");
 let urlPokemon = "https://pokeapi.co/api/v2/pokemon/";
 
 async function getPokemon(searchRange) {

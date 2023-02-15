@@ -1,13 +1,13 @@
-const pokemonList = document.querySelector(".cartas-de-pokemones");
-const previousPage = document.querySelector("#pagina-anterior");
-const nextPage = document.querySelector("#pagina-siguiente");
+const pokemonList = document.querySelector(".pokemon-cards");
+const previousPage = document.querySelector("#previous-page");
+const nextPage = document.querySelector("#next-page");
 const pokemonTypes = document.querySelectorAll(".btn-sidebar");
 
 function showPokemon(pokemonesJSON) {
   const div = document.createElement("div");
 
   let types = pokemonesJSON.types.map(
-    (type) => `<p class="${type.type.name} tipo">${type.type.name}</p>`
+    (type) => `<p class="${type.type.name} type">${type.type.name}</p>`
   );
   types = types.join("");
 
@@ -26,14 +26,14 @@ function showPokemon(pokemonesJSON) {
     <img src="${pokemonesJSON.sprites.other["official-artwork"].front_default}" alt="${pokemonesJSON.name}">
   </div>
   <div class="pokemon-info">
-    <div class="nombre-pokemon">
+    <div class="pokemon-name">
       <p class="pokemon-id">#${pokemonesId}</p>
-      <h2 class="nombre-pokemon" id="nombre-pokemon">${pokemonesJSON.name}</h2>
+      <h2 class="pokemon-name" id="pokemon-name">${pokemonesJSON.name}</h2>
     </div>
-    <div class="pokemon-tipos">
+    <div class="pokemon-types">
     ${types}
     </div>
-    <div class="informacion">
+    <div class="information">
       <button class="modal-btn">Information</button>
     </div>
   </div>
@@ -48,7 +48,7 @@ function showPokemon(pokemonesJSON) {
   modalBtn.addEventListener("click", () => {
     modalTitle.textContent = pokemonesJSON.name;
     modalBody.innerHTML = `
-      <div class="pokemon-imagen">
+      <div class="pokemon-img">
         <img src="${
           pokemonesJSON.sprites.other["official-artwork"].front_default
         }" alt="${pokemonesJSON.name}">
@@ -84,14 +84,14 @@ function showPokemon(pokemonesJSON) {
   pokemonList.append(div);
 }
 
-pokemonTypes.forEach((tipo) => {
-  tipo.addEventListener("click", (e) => {
+pokemonTypes.forEach((type) => {
+  type.addEventListener("click", (e) => {
     const selectedType = e.target.id;
     const pokemon = document.querySelectorAll(".card");
 
     pokemon.forEach((pokemon) => {
-      const tipoPokemon = pokemon.querySelector(`.${selectedType}`);
-      if (tipoPokemon) {
+      const pokemonType = pokemon.querySelector(`.${selectedType}`);
+      if (pokemonType) {
         pokemon.style.display = "flex";
       } else {
         pokemon.style.display = "none";
@@ -100,7 +100,7 @@ pokemonTypes.forEach((tipo) => {
   });
 });
 
-document.querySelector("#ver-todos").addEventListener("click", () => {
+document.querySelector("#all-pokemon").addEventListener("click", () => {
   const pokemon = document.querySelectorAll(".card");
   pokemon.forEach((pokemon) => {
     pokemon.style.display = "flex";
@@ -136,7 +136,7 @@ const generations = [
 ];
 
 function switchPage() {
-  const generationName = document.querySelector(".numero-de-generacion");
+  const generationName = document.querySelector(".generation-name");
   const currentGeneration = generations[pageNumber];
   generationName.innerHTML = currentGeneration.tittle;
   previousPage.disabled = pageNumber === 0;
