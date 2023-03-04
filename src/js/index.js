@@ -6,12 +6,12 @@ import switchPage from './switch-page.js';
 
 let pageNumber = 0;
 
-async function loadPage() {
+function loadPage() {
   getPokemon();
 }
 loadPage();
 
-async function goToPreviousPage() {
+function goToPreviousPage() {
   pageNumber--;
   if (pageNumber < 0) {
     pageNumber = 0;
@@ -19,15 +19,15 @@ async function goToPreviousPage() {
   setTimeout(switchPage, 1000);
 }
 
-async function goToNextPage() {
+function goToNextPage() {
   pageNumber++;
   setTimeout(switchPage, 1000);
 }
 
-async function $showAllPokemon() {
+function $showAllPokemon() {
   showAllPokemon();
 }
 
-async function setFilter() {
+function setFilter() {
   filterPokemonByType();
 }
