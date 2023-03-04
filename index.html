@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokedex</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap-grid.min.css"
+    />
+    <link rel="stylesheet" href="src/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="grid-container">
+    <header class="header">
+      <h1>Pokédex Navigator</h1>
+    </header>
+    <nav class="navbar">
+      <div class="navbar2">
+        <div class="tittle-nav">
+          <h3>Welcome to the <b class="generation-name"> </b></h3>
+        </div>
+        <div>
+          <button class="btn btn-outline-success mr-2" id="previous-page" onclick="goToPreviousPage()">
+            Previous Generation
+          </button>
+          <button class="btn btn-outline-success" id="next-page" onclick="goToNextPage()">
+            Next Generation
+          </button>
+        </div>
+      </div>
+    </nav>
+    <aside class="sidebar">
+      <ul class="sidebar-list">
+        <li class="sidebar-item">
+          <button class="btn btn-sidebar" id="all-pokemon" onclick="$showAllPokemon()">All</button>
+        </li>
+        <li class="sidebar-item">
+          <button class="btn btn-sidebar normal" id="normal" onclick="setFilter()">Normal</button>
+        </li>
+        <li class="sidebar-item">
+          <button class="btn btn-sidebar fire" id="fire" onclick="setFilter()">Fire</button>
+        </li>
+        <li class="sidebar-item">
+          <button class="btn btn-sidebar water" id="water" onclick="setFilter()">Water</button>
+        </li>
+        <li class="sidebar-item">
+          <button class="btn btn-sidebar grass" id="grass" onclick="setFilter()">Grass</button>
+        </li>
+        <li class="sidebar-item">
+          <button class="btn btn-sidebar electric" id="electric" onclick="setFilter()">
+            Electric
+          </button>
+        </li>
+        <li class="sidebar-item">
+          <button class="btn btn-sidebar ice" id="ice" onclick="setFilter()">Ice</button>
+        </li>
+        <li class="sidebar-item">
+          <button class="btn btn-sidebar fighting" id="fighting" onclick="setFilter()">
+            Fighting
+          </button>
+        </li>
+        <li class="sidebar-item">
+          <button class="btn btn-sidebar poison" id="poison" onclick="setFilter()">Poison</button>
+        </li>
+        <li class="sidebar-item">
+          <button class="btn btn-sidebar ground" id="ground" onclick="setFilter()">Ground</button>
+        </li>
+        <li class="sidebar-item">
+          <button class="btn btn-sidebar flying" id="flying" onclick="setFilter()">Flying</button>
+        </li>
+        <li class="sidebar-item">
+          <button class="btn btn-sidebar psychic" id="psychic" onclick="setFilter()">Psychic</button>
+        </li>
+        <li class="sidebar-item">
+          <button class="btn btn-sidebar bug" id="bug" onclick="setFilter()">Bug</button>
+        </li>
+        <li class="sidebar-item">
+          <button class="btn btn-sidebar rock" id="rock" onclick="setFilter()">Rock</button>
+        </li>
+        <li class="sidebar-item">
+          <button class="btn btn-sidebar ghost" id="ghost" onclick="setFilter()">Ghost</button>
+        </li>
+        <li class="sidebar-item">
+          <button class="btn btn-sidebar dark" id="dark" onclick="setFilter()">Dark</button>
+        </li>
+        <li class="sidebar-item">
+          <button class="btn btn-sidebar dragon" id="dragon" onclick="setFilter()">Dragon</button>
+        </li>
+        <li class="sidebar-item">
+          <button class="btn btn-sidebar steel" id="steel" onclick="setFilter()">Steel</button>
+        </li>
+        <li class="sidebar-item">
+          <button class="btn btn-sidebar fairy" id="fairy" onclick="setFilter()">Fairy</button>
+        </li>
+      </ul>
+    </aside>
+    <article class="main">
+      <div class="pokemon-cards"></div>
+    </article>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="modal-title"></h2>
+        <div class="modal-body"></div>
+      </div>
+    </div>
+    <footer class="footer">Copyright © Valentin Veron Caceres</footer>
+    <script src="src/js/index.js" type="module"></script>
+  </body>
+</html>
