@@ -1,12 +1,11 @@
-import showPokemon from './ui.js';
-
 async function getPokemon(searchRange) {
   const urlPokemon = 'https://pokeapi.co/api/v2/pokemon/';
-  document.querySelector('.pokemon-cards').innerHTML = '';
+  const pokemons = [];
   for (let i = searchRange[0]; i <= searchRange[1]; i++) {
-    const pokemonesJSON = await fetch(urlPokemon + i).then((response) => response.json());
-    showPokemon(pokemonesJSON);
+    const pokemonJSON = await fetch(urlPokemon + i).then((response) => response.json());
+    pokemons.push(pokemonJSON);
   }
+  return pokemons;
 }
 
 export default getPokemon;

@@ -1,33 +1,35 @@
 import { filterPokemonByType, showAllPokemon } from './filters.js';
 
-import getPokemon from './pokeapi.js';
-
-import switchPage from './switch-page.js';
+import { loadPage } from './load-page.js';
 
 let pageNumber = 0;
 
-function loadPage() {
-  getPokemon();
-}
-loadPage();
+const previousPage = document.querySelector('#previous-page');
+const nextPage = document.querySelector('#next-page');
 
-function goToPreviousPage() {
+const $showAllPokemon = document.querySelector('#all-pokemon');
+const setFilter = document.querySelectorAll('.btn-sidebar');
+
+function initApp() {
+  loadPage();
+}
+initApp();
+
+previousPage.addEventListener('click', () => {
+  document.querySelector('.pokemon-cards').innerHTML = '';
   pageNumber--;
   if (pageNumber < 0) {
     pageNumber = 0;
   }
-  setTimeout(switchPage, 1000);
-}
+  setTimeout(loadPage, 1000);
+});
 
-function goToNextPage() {
+nextPage.addEventListener('click', () => {
+  document.querySelector('.pokemon-cards').innerHTML = '';
   pageNumber++;
-  setTimeout(switchPage, 1000);
-}
+  setTimeout(loadPage, 1000);
+});
 
-function $showAllPokemon() {
-  showAllPokemon();
-}
+$showAllPokemon.addEventListener('click', showAllPokemon());
 
-function setFilter() {
-  filterPokemonByType();
-}
+setFilter.addEventListener('click', filterPokemonByType());

@@ -1,6 +1,5 @@
-export function filterPokemonByType() {
+function filterPokemonByType() {
   const pokemonTypes = document.querySelectorAll('.btn-sidebar');
-
   pokemonTypes.forEach((type) => {
     type.addEventListener('click', (e) => {
       const selectedType = e.target.id;
@@ -17,9 +16,14 @@ export function filterPokemonByType() {
     });
   });
 }
-export function showAllPokemon() {
+
+export { filterPokemonByType };
+
+function showAllPokemon() {
   const pokemon = document.querySelectorAll('.card');
   pokemon.forEach((pokemon) => {
     pokemon.style.display = 'flex';
   });
 }
+
+export { showAllPokemon };
