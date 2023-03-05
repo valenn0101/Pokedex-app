@@ -1,6 +1,6 @@
 import { filterPokemonByType, showAllPokemon } from './filters.js';
 
-import getPokemon from './data.js';
+import getPokemon from './pokeapi.js';
 
 import switchPage from './switch-page.js';
 

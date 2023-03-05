@@ -1,4 +1,4 @@
-import getPokemon from './data.js';
+import getPokemon from './pokeapi.js';
 
 const previousPage = document.querySelector('#previous-page');
 const nextPage = document.querySelector('#next-page');
