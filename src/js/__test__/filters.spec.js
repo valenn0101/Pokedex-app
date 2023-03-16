@@ -12,6 +12,9 @@ describe('filterPokemonByType', () => {
       <div class="card">
         <div class="water"></div>
       </div>
+      <div class="card">
+      <div class="grass"></div>
+    </div>
       <div class="btn-sidebar" id="all-pokemon"></div>
       <div class="btn-sidebar normal" id="normal"></div>
       <div class="btn-sidebar fire" id="fire"></div>
