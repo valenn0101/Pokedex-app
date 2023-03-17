@@ -23,7 +23,7 @@ describe('filterPokemonByType', () => {
     `;
   });
 
-  test('debería mostrar solo Pokémon de tipo fuego cuando se selecciona el tipo "fuego"', () => {
+  test('Debería mostrar solo Pokémon de tipo fuego cuando se selecciona el tipo "fuego"', () => {
     const fireButton = document.querySelector('#fire');
     const waterPokemon = document.querySelector('#water');
     const grassPokemon = document.querySelector('#grass');

@@ -56,7 +56,7 @@ export default function showPokemon(pokemon) {
   div.innerHTML = `
   <div class="pokemon">
   <p class="pokemon-id-fondo">#${pokemonId}</p>
-  <div class="pokemon-imagen">
+  <div class="pokemon-img">
     <img src="${pokemon.sprites.other['official-artwork'].front_default}" alt="${pokemon.name}">
   </div>
   <div class="pokemon-info">
