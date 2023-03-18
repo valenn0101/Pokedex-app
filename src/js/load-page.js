@@ -1,21 +1,22 @@
-import getPokemon from './data.js';
+import getPokemon from './pokeapi.js';
+import showPokemon from './ui.js';
 
 const previousPage = document.querySelector('#previous-page');
 const nextPage = document.querySelector('#next-page');
 let pageNumber = 0;
-let searchRange = [];
+const searchRange = [];
 
 previousPage.addEventListener('click', () => {
   pageNumber--;
   if (pageNumber < 0) {
     pageNumber = 0;
   }
-  setTimeout(switchPage, 1000);
+  setTimeout(loadPage, 1000);
 });
 
 nextPage.addEventListener('click', () => {
   pageNumber++;
-  setTimeout(switchPage, 1000);
+  setTimeout(loadPage, 1000);
 });
 
 const generations = [
@@ -30,14 +31,21 @@ const generations = [
   { tittle: 'Ninth Generation', start: 906, end: 1008 },
 ];
 
-function switchPage() {
+async function loadPage() {
   const generationName = document.querySelector('.generation-name');
   const currentGeneration = generations[pageNumber];
   generationName.innerHTML = currentGeneration.tittle;
   previousPage.disabled = pageNumber === 0;
   nextPage.disabled = pageNumber === generations.length - 1;
-  searchRange = [currentGeneration.start, currentGeneration.end];
-  getPokemon(searchRange);
+  const searchRange = [currentGeneration.start, currentGeneration.end];
+  try {
+    const pokemonList = await getPokemon(searchRange);
+    pokemonList.forEach((pokemon) => {
+      showPokemon(pokemon);
+    });
+  } catch (error) {
+    console.log(error);
+  }
 }
 
-export default switchPage();
+export default loadPage;
