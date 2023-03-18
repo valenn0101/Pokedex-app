@@ -1,5 +1,5 @@
-function formatPokemonId(id) {
-  let pokemonId = id.toString();
+function formatPokemonId(pokemon) {
+  let pokemonId = pokemon.id.toString();
   if (pokemonId.length === 1) {
     pokemonId = `00${pokemonId}`;
   } else if (pokemonId.length === 2) {
@@ -50,8 +50,7 @@ export default function showPokemon(pokemon) {
 
   const types = pokemon.types.map(generatePokemonTypeHTML).join('');
 
-  const pokemonId = formatPokemonId(pokemon.id);
-
+  const pokemonId = formatPokemonId(pokemon);
   div.classList.add('card');
   div.innerHTML = `
   <div class="pokemon">

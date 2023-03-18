@@ -31,19 +31,21 @@ const generations = [
   { tittle: 'Ninth Generation', start: 906, end: 1008 },
 ];
 
-function loadPage() {
+async function loadPage() {
   const generationName = document.querySelector('.generation-name');
   const currentGeneration = generations[pageNumber];
   generationName.innerHTML = currentGeneration.tittle;
   previousPage.disabled = pageNumber === 0;
   nextPage.disabled = pageNumber === generations.length - 1;
   const searchRange = [currentGeneration.start, currentGeneration.end];
-  getPokemon(searchRange).then((pokemons) => {
-    pokemons.forEach((pokemon) => {
+  try {
+    const pokemonList = await getPokemon(searchRange);
+    pokemonList.forEach((pokemon) => {
       showPokemon(pokemon);
     });
-  }).catch((error) => {
+  } catch (error) {
     console.log(error);
-  });
+  }
 }
-export { loadPage };
+
+export default loadPage;

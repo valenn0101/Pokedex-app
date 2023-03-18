@@ -1,6 +1,6 @@
 import { filterPokemonByType, showAllPokemon } from './filters.js';
 
-import { loadPage } from './load-page.js';
+import loadPage from './load-page.js';
 
 let pageNumber = 0;
 
