@@ -14,6 +14,7 @@ async function getPokemon(searchRange) {
       pokemonJSON.stats,
       pokemonJSON.sprites,
     );
+    pokemon.url = `${urlPokemon}${i}`;
     pokemons.push(pokemon);
   }
   return pokemons;
